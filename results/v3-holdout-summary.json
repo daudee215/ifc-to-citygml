@@ -1,0 +1,30 @@
+{
+  "scope": "Controlled analytical holdout",
+  "inputs": 160,
+  "outcomes": {
+    "v2_guarded": {
+      "attempts": 160,
+      "accepted_reference_passed": 126,
+      "accepted_reference_failed": 24,
+      "review": 2,
+      "rejected": 8,
+      "execution_failed": 0
+    },
+    "v3_no_repair": {
+      "attempts": 160,
+      "accepted_reference_passed": 97,
+      "accepted_reference_failed": 4,
+      "review": 11,
+      "rejected": 47,
+      "execution_failed": 1
+    },
+    "v3_constrained": {
+      "attempts": 160,
+      "accepted_reference_passed": 111,
+      "accepted_reference_failed": 4,
+      "review": 11,
+      "rejected": 33,
+      "execution_failed": 1
+    }
+  }
+}

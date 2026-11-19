@@ -1,0 +1,12 @@
+{
+  "profile_id": "citygml3-union-outer-shells-0.2",
+  "supported_ifc_schemas": ["IFC4", "IFC2X3"],
+  "representation": "union_outer_shells",
+  "coordinate_mode": "local_engineering",
+  "srs_name": "urn:ifc-citygml:crs:local-engineering-metres",
+  "transform": {"translation_m": [0.0, 0.0, 0.0], "yaw_degrees": 0.0, "scale": 1.0},
+  "geometry_tolerance_m": 0.000001,
+  "allow_partial": false,
+  "shell_ifc_classes": ["IfcWall", "IfcSlab", "IfcRoof", "IfcDoor", "IfcWindow", "IfcCurtainWall"],
+  "independent_validation_required": true
+}

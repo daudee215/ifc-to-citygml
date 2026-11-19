@@ -1,0 +1,57 @@
+{
+  "source": {
+    "name": "source_correspondence_v1",
+    "target": "source",
+    "maximum_vertex_change_m": 1e-07,
+    "validator_snap_m": 1e-06,
+    "numerical_relation_tolerance_m": 1e-11,
+    "require_source_relations": false,
+    "require_solid_diagnostic": false,
+    "allow_unresolved_contacts": false,
+    "coordinate_policy": "engineering_only"
+  },
+  "material_union": {
+    "name": "guarded_material_union_v1",
+    "target": "material_union",
+    "maximum_vertex_change_m": 1e-07,
+    "validator_snap_m": 1e-06,
+    "numerical_relation_tolerance_m": 1e-11,
+    "require_source_relations": true,
+    "require_solid_diagnostic": true,
+    "allow_unresolved_contacts": false,
+    "coordinate_policy": "engineering_only"
+  },
+  "envelope": {
+    "name": "reviewed_envelope_v1",
+    "target": "envelope",
+    "maximum_vertex_change_m": 1e-07,
+    "validator_snap_m": 1e-06,
+    "numerical_relation_tolerance_m": 1e-11,
+    "require_source_relations": true,
+    "require_solid_diagnostic": true,
+    "allow_unresolved_contacts": false,
+    "coordinate_policy": "engineering_only"
+  },
+  "block": {
+    "name": "bounds_only_v1",
+    "target": "block",
+    "maximum_vertex_change_m": 1e-07,
+    "validator_snap_m": 1e-06,
+    "numerical_relation_tolerance_m": 1e-11,
+    "require_source_relations": false,
+    "require_solid_diagnostic": true,
+    "allow_unresolved_contacts": false,
+    "coordinate_policy": "engineering_only"
+  },
+  "generalisation": {
+    "name": "declared_generalisation_v1",
+    "target": "generalisation",
+    "maximum_vertex_change_m": 1e-07,
+    "validator_snap_m": 1e-06,
+    "numerical_relation_tolerance_m": 1e-11,
+    "require_source_relations": true,
+    "require_solid_diagnostic": true,
+    "allow_unresolved_contacts": false,
+    "coordinate_policy": "engineering_only"
+  }
+}

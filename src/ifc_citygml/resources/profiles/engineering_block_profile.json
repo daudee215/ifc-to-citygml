@@ -1,0 +1,21 @@
+{
+  "profile_id": "citygml3-engineering-with-map-provenance-block-0.5",
+  "supported_ifc_schemas": [
+    "IFC4"
+  ],
+  "representation": "axis_aligned_bounding_block",
+  "coordinate_mode": "engineering_with_map_provenance",
+  "srs_name": "urn:ifc-citygml:crs:local-engineering-metres",
+  "transform": {
+    "translation_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "yaw_degrees": 0.0,
+    "scale": 1.0
+  },
+  "geometry_tolerance_m": 1e-06,
+  "allow_partial": false,
+  "physical_representation_policy": "explicit_body_with_annotation_omissions_v1"
+}

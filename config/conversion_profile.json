@@ -1,0 +1,22 @@
+{
+  "profile_id": "citygml3-ifc-world-aabb-0.1",
+  "supported_ifc_schemas": [
+    "IFC4",
+    "IFC2X3"
+  ],
+  "representation": "axis_aligned_bounding_block",
+  "coordinate_mode": "local_engineering",
+  "srs_name": "urn:ifc-citygml:crs:local-engineering-metres",
+  "transform": {
+    "translation_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "yaw_degrees": 0.0,
+    "scale": 1.0
+  },
+  "geometry_tolerance_m": 1e-06,
+  "allow_partial": false,
+  "physical_representation_policy": "explicit_body_with_annotation_omissions_v1"
+}

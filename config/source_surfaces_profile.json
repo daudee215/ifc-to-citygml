@@ -1,0 +1,13 @@
+{
+  "profile_id": "citygml3-source-constructive-surfaces-0.3",
+  "supported_ifc_schemas": ["IFC4", "IFC2X3"],
+  "representation": "source_constructive_surfaces",
+  "coordinate_mode": "local_engineering",
+  "srs_name": "urn:ifc-citygml:crs:local-engineering-metres",
+  "transform": {"translation_m": [0.0, 0.0, 0.0], "yaw_degrees": 0.0, "scale": 1.0},
+  "geometry_tolerance_m": 0.000001,
+  "allow_partial": false,
+  "constructive_ifc_classes": ["IfcWall", "IfcSlab", "IfcRoof", "IfcBeam", "IfcColumn", "IfcMember", "IfcPlate", "IfcFooting", "IfcPile", "IfcStair", "IfcStairFlight", "IfcCurtainWall"],
+  "filling_ifc_classes": ["IfcDoor", "IfcWindow"],
+  "independent_validation_required": true
+}

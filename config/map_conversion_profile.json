@@ -1,0 +1,12 @@
+{
+  "profile_id": "citygml3-ifc4-native-3d-map-conversion-0.2",
+  "supported_ifc_schemas": ["IFC4"],
+  "representation": "union_outer_shells",
+  "coordinate_mode": "ifc_map_conversion",
+  "srs_name": "auto",
+  "transform": {"translation_m": [0.0, 0.0, 0.0], "yaw_degrees": 0.0, "scale": 1.0},
+  "geometry_tolerance_m": 0.000001,
+  "allow_partial": false,
+  "shell_ifc_classes": ["IfcWall", "IfcSlab", "IfcRoof", "IfcDoor", "IfcWindow", "IfcCurtainWall"],
+  "independent_validation_required": true
+}

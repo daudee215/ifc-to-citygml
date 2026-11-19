@@ -1,0 +1,22 @@
+{
+  "profile_id": "citygml3-synthetic-placement-0.1",
+  "supported_ifc_schemas": [
+    "IFC4",
+    "IFC2X3"
+  ],
+  "representation": "axis_aligned_bounding_block",
+  "coordinate_mode": "synthetic_transform",
+  "srs_name": "urn:ifc-citygml:crs:synthetic-placement-metres",
+  "transform": {
+    "translation_m": [
+      395000,
+      4980000,
+      220
+    ],
+    "yaw_degrees": 30,
+    "scale": 1
+  },
+  "geometry_tolerance_m": 1e-06,
+  "allow_partial": false,
+  "physical_representation_policy": "explicit_body_with_annotation_omissions_v1"
+}

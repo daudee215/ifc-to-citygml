@@ -1,0 +1,29 @@
+{
+  "profile_id": "citygml3-engineering-with-map-provenance-exterior-0.5",
+  "supported_ifc_schemas": [
+    "IFC4"
+  ],
+  "representation": "union_outer_shells",
+  "coordinate_mode": "engineering_with_map_provenance",
+  "srs_name": "urn:ifc-citygml:crs:local-engineering-metres",
+  "transform": {
+    "translation_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "yaw_degrees": 0.0,
+    "scale": 1.0
+  },
+  "geometry_tolerance_m": 1e-06,
+  "allow_partial": false,
+  "shell_ifc_classes": [
+    "IfcWall",
+    "IfcSlab",
+    "IfcRoof",
+    "IfcDoor",
+    "IfcWindow",
+    "IfcCurtainWall"
+  ],
+  "independent_validation_required": true
+}
