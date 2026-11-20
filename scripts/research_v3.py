@@ -8,6 +8,8 @@ def main():
     sub=p.add_subparsers(dest='command',required=True)
     prepare=sub.add_parser('prepare');prepare.add_argument('--partition',choices=['development','holdout'],required=True);prepare.add_argument('--count',type=int,required=True);prepare.add_argument('--output',required=True)
     benchmark=sub.add_parser('benchmark');benchmark.add_argument('manifest');benchmark.add_argument('--output',required=True);benchmark.add_argument('--workers',type=int,default=3)
+    smoke = sub.add_parser('smoke', help='Check four generated fixtures against analytical references')
+    smoke.add_argument('--output', type=Path, required=True, help='New directory for inputs and results')
     conversion=sub.add_parser('convert');conversion.add_argument('input');conversion.add_argument('--output',required=True);conversion.add_argument('--policy');conversion.add_argument('--experimental-ifc43',action='store_true')
     general=sub.add_parser('generalise');general.add_argument('report');general.add_argument('--contract');general.add_argument('--output',required=True)
     incremental=sub.add_parser('update');incremental.add_argument('input');incremental.add_argument('--cache',required=True);incremental.add_argument('--output',required=True);incremental.add_argument('--skip-rebuild-verification',action='store_true')
@@ -25,6 +27,23 @@ def main():
     elif args.command=='benchmark':
         from ifc_citygml_v3.safe_benchmark import run
         r=run(args.manifest,args.output,args.workers);print('Completed',r['attempts'],'attempts')
+    elif args.command == 'smoke':
+        from ifc_citygml.validator_tools import probe_validator
+        from ifc_citygml_v3.fixtures import prepare
+        from ifc_citygml_v3.safe_benchmark import run
+
+        if probe_validator()['status'] != 'passed':
+            p.error('Set up val3dity 2.7.0 before running the smoke benchmark.')
+        args.output.mkdir(parents=True, exist_ok=False)
+        fixtures = args.output / 'fixtures'
+        results = args.output / 'results'
+        prepare(fixtures, partition='development', count=4)
+        report = run(fixtures / 'manifest.json', results, workers=1)
+        passed = sum(case['status'] == 'accepted' and case['reference_passed']
+                     for case in report['cases'])
+        print(f'{passed}/{report["attempts"]} reference checks passed. Report: {results / "index.json"}')
+        if report['attempts'] != 12 or passed != 12:
+            raise SystemExit(1)
     elif args.command=='convert':
         from ifc_citygml_v3.converter import convert
         from ifc_citygml_v3.policy import Policy

@@ -14,7 +14,8 @@ def test_bundled_resources_match_pinned_checkout_inputs():
     checked = common.verify_resources()
     assert checked["schema_count"] == 62
     assert checked["profile_count"] == 7
-    canonical = json.loads((common.ROOT / "schemas/manifest.json").read_text())
+    canonical = json.loads((common.SCHEMA_DIR / "manifest.json").read_text(encoding="utf-8"))
+    assert len(canonical["files"]) == checked["schema_count"]
     for item in canonical["files"]:
         assert common.digest(common.SCHEMA_DIR / item["path"]) == item["sha256"]
     for alias, name in common.BUILTIN_PROFILES.items():

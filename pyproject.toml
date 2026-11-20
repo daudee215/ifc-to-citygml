@@ -12,6 +12,7 @@ dependencies = ["ifcopenshell==0.9.0.post1", "numpy==2.5.4", "lxml==6.1.3", "sha
 
 [project.optional-dependencies]
 dev = ["pytest==9.2.0"]
+research = ["psutil==7.2.2"]
 
 [project.scripts]
 ifc-citygml = "ifc_citygml.cli:main"

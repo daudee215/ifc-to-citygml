@@ -1,0 +1,26 @@
+name: Converter and fixture benchmark
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install converter and research dependencies
+        run: python -m pip install -e ".[dev,research]"
+      - name: Set up geometry validator
+        run: ifc-citygml setup-validator
+      - name: Run focused converter tests
+        run: python -m pytest -q tests/test_installable_cli.py tests/test_v3_conversion.py tests/test_v3_annotation_scope.py
+      - name: Compare fixture conversions with reference geometry
+        run: python scripts/research_v3.py smoke --output "$env:RUNNER_TEMP/ifc-fixture-benchmark"

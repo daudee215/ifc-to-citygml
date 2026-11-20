@@ -1,0 +1,2 @@
+# Preserve the original bytes covered by the runtime SHA-256 manifests.
+/src/ifc_citygml/resources/** -text
